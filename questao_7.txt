@@ -1,13 +1,13 @@
-aresta(a,e).
+aresta(y,e).
 aresta(c,b).
 aresta(e,c).
 aresta(e,d).
-aresta(c,a).
-aresta(b,a).
+aresta(c,y).
+aresta(b,y).
 aresta(d,c).
 aresta(e,z).
-aresta(q,p).
-aresta(a,b).
+aresta(u,p).
+aresta(y,b).
 
 path(X,Y) :- next_aresta(X,Y,[]).     
 

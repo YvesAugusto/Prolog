@@ -6,4 +6,4 @@ vizinhos(X,Lista):- adjacente(A,X,Lista), write('Previous: '), write(A),nl, adja
 
 vizinhos(b, [k,b,y,b,t,u]).
 
-%https://swish.swi-prolog.org/p/ZbRuiEqJ.swinb
+%https://swish.swi-prolog.org/p/uMqkhaMo.swinb

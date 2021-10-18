@@ -1,0 +1,36 @@
+casa(_, _, _, _, _).
+
+
+hints(Casas) :-
+    length(Casas, 5),                                            
+    member(casa(ingles,_,_,_,vermelho), Casas),                         
+    member(casa(espanhol,cachorro,_,_,_), Casas),                         
+    member(casa(_,_,_,cafe,verde), Casas),                        
+    member(casa(ucraniano,_,_,cha,_), Casas),                       
+    near_houses(casa(_,_,_,_,verde), casa(_,_,_,_,branco), Casas),             
+    member(casa(_,iguana,winston,_,_), Casas),                       
+    member(casa(_,_,marlboro,_,amarelo), Casas),                         
+    Casas = [_,_,casa(_,_,_,leite,_),_,_],                          
+    Casas = [casa(noruegues,_,_,_,_)|_],                            
+    near_houses(casa(_,raposa,_,_,_), casa(_,_,chesterfields,_,_), Casas),        
+    near_houses(casa(_,_,marlboro,_,_), casa(_,cavalo,_,_,_), Casas),              
+    member(casa(_,_,lucky_strike,laranja,_), Casas),                         
+    member(casa(portugues,_,sg_lights,_,_), Casas),                      
+    near_houses(casa(noruegues,_,_,_,_), casa(_,_,_,_,azul), Casas),         
+    member(casa(_,_,_,agua,_), Casas),       
+    member(casa(_,zebra,_,_,_), Casas).      
+
+near_houses(A, B, Casas) :- append(_, [A,B|_], Casas).
+
+quem_possui_zebra(Proprietario) :-
+    hints(Casas),
+    member(casa(Proprietario,zebra,_,_,_), Casas).
+
+bebedor(Proprietario) :-
+    hints(Casas),
+    member(casa(Proprietario,_,_,agua,_), Casas).
+    
+bebedor(Proprietario);
+quem_possui_zebra(Proprietario).
+
+%https://swish.swi-prolog.org/p/RdlccDCS.swinb

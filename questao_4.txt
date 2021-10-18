@@ -28,4 +28,4 @@ conectado(X,Y) :- encostado(X,Y).
 prox_bloco(A,Y) :-
     conectado(A,X),not(member(X,Y)) , write(X), (prox_bloco(X,[A|Y])).
 
-%https://swish.swi-prolog.org/p/oyDNqwWr.swinb
+%https://swish.swi-prolog.org/p/ZdGvLBxM.swinb

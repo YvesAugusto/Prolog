@@ -13,7 +13,7 @@ move(N, X, Y, Z):-
     move(M, Z, Y, X).
 
 
-move(3, source, target, intern);
-move(5, source, target, intern).
+move(3, origem, destino, intermediario);
+move(5, origem, destino, intermediario).
 
 %https://swish.swi-prolog.org/p/qdEHbSTm.swinb

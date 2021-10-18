@@ -1,0 +1,13 @@
+acionar(Motions) :- baldes([0-0], Motions).
+baldes(Motions, Motions) :- Motions = [2-_|_] ; Motions = [_-2|_].
+baldes([Buckets|Movimentado], Steps) :- movimenta(Buckets, Update), \+ memberchk(Update, Movimentado), baldes([Update,Buckets|Movimentado], Steps).
+
+movimenta(A1-A2, B1-B2) :-
+    A1 = 0, B1 =  3, B2 = A2 ; A2 = 0, B2 =  4, B1 = A1 ; 
+    A1 > 0, B1 =  0, B2 = A2 ; A2 > 0, B2 =  0, B1 = A1 ; 
+    A1 > 0, A2 < 4, T is min(A1, 4 - A2), B1 is A1 - T, B2 is A2 + T ; 
+    A2 > 0, A1 < 3, T is min(A2, 3 - A1), B2 is A2 - T, B1 is A1 + T .
+    
+acionar(Motions).
+
+%https://swish.swi-prolog.org/p/uBlPLFtD.swinb
